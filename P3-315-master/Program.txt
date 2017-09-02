@@ -1,0 +1,8 @@
+OPEN CourseNames
+OPEN CourseInfo
+OPEN CourseStudents
+csceCourses <- CourseNames & (select (Subj == "CSCE") CourseInfo)
+csceRemaining <- csceCourses & (select (Rem > 0) CourseStudents)
+SHOW csceRemaining
+courseNumbers <- select (CRN == 32586 || CRN == 12901) CourseNames
+SHOW courseNumbers
